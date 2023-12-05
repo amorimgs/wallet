@@ -4,3 +4,9 @@ export type WalletType = {
   editor: boolean;
   idToEdit: number
 };
+
+export type StoreType = {
+  user: {
+    email: string
+  }
+};
