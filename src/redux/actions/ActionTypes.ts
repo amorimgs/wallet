@@ -1,2 +1,3 @@
 export const USER_ACTION = 'USER_ACTION';
-export const WALLET_ACTION = 'WALLET_ACTION';
+export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
+export const ADD_DISPESAS = 'ADD_DISPESAS';
