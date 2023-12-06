@@ -73,6 +73,7 @@ function WalletForm() {
         </select>
         <label htmlFor="value">Valor</label>
         <input
+          required
           value={ dataForm.value }
           type="number"
           id="value"

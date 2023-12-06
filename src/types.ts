@@ -4,7 +4,7 @@ import { AnyAction } from 'redux';
 export type WalletType = {
   wallet: {
     currencies: string[],
-    expenses: ExpensesType;
+    expenses: ExpensesType[];
     editor: boolean;
     idToEdit: number;
   } };
@@ -27,4 +27,4 @@ export type ExpensesType = {
   method: string;
   tag: string;
   exchangeRates: any;
-}[];
+};
