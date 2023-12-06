@@ -1,6 +1,7 @@
-import { Dispatch } from '../../types';
+import { Dispatch, ExpensesType } from '../../types';
 import {
   ADD_DISPESAS,
+  REMOVE_DISPESA,
   REQUEST_SUCCESSFUL, USER_ACTION } from './ActionTypes';
 
 // Coloque aqui suas actions
@@ -54,5 +55,12 @@ export const addDispesas = (expenses: {
     } catch (error: any) {
       console.log(error.message);
     }
+  };
+};
+
+export const removeDispesa = (expenses:ExpensesType[]) => {
+  return {
+    type: REMOVE_DISPESA,
+    payload: expenses,
   };
 };

@@ -1,8 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ExpensesType, StateType } from '../types';
+import { removeDispesa } from '../redux/actions';
 
 function Table() {
   const { expenses } = useSelector((state:StateType) => state.wallet);
+  const dispatch = useDispatch();
+  const handleClick = (e:React.MouseEvent<HTMLButtonElement>) => {
+    const newExpense = expenses.filter((el) => el.id !== +e.currentTarget.id);
+    dispatch(removeDispesa(newExpense));
+  };
 
   return (
     <div>
@@ -33,7 +39,17 @@ function Table() {
                   <td>{ (+el.exchangeRates[el.currency].ask).toFixed(2) }</td>
                   <td>{ (+el.value * +el.exchangeRates[el.currency].ask).toFixed(2) }</td>
                   <td>Real</td>
-                  <td>Editar/Excluir</td>
+                  <td>
+                    <button>Editar</button>
+                    /
+                    <button
+                      id={ (el.id).toString() }
+                      onClick={ (e) => handleClick(e) }
+                      data-testid="delete-btn"
+                    >
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
               );
             })

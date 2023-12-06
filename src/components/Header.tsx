@@ -13,14 +13,16 @@ function Header() {
         const Conversao = +value.value * ValueMoeda;
         return acc + Conversao;
       }, 0);
-      setAsk(+total.toFixed(2));
+      setAsk(+total);
+    } else {
+      setAsk(0);
     }
   }, [expenses]);
 
   return (
     <div>
       <p data-testid="email-field">{ email }</p>
-      <p data-testid="total-field">{ ask }</p>
+      <p data-testid="total-field">{ ask.toFixed(2) }</p>
       <p data-testid="header-currency-field">BRL</p>
     </div>
   );
