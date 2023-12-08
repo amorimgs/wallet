@@ -1,8 +1,9 @@
 import { Dispatch, ExpensesType } from '../../types';
 import {
   ADD_DISPESAS,
+  EDITAR_DISPESA,
   REMOVE_DISPESA,
-  REQUEST_SUCCESSFUL, USER_ACTION } from './ActionTypes';
+  REQUEST_SUCCESSFUL, SALVAR_EDICAO, USER_ACTION } from './ActionTypes';
 
 // Coloque aqui suas actions
 export const userAction = (email:string) => ({
@@ -61,6 +62,27 @@ export const addDispesas = (expenses: {
 export const removeDispesa = (expenses:ExpensesType[]) => {
   return {
     type: REMOVE_DISPESA,
+    payload: expenses,
+  };
+};
+
+export const editarDispesa = (id:string) => {
+  return {
+    type: EDITAR_DISPESA,
+    payload: id,
+  };
+};
+
+export const salvarDispesa = (expenses: {
+  id: number;
+  value: string;
+  description: string;
+  currency: string;
+  method: string;
+  tag: string;
+}) => {
+  return {
+    type: SALVAR_EDICAO,
     payload: expenses,
   };
 };

@@ -1,11 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addDispesas, fetchCurrencies } from '../redux/actions';
+import { addDispesas, fetchCurrencies, salvarDispesa } from '../redux/actions';
 import { Dispatch, StateType } from '../types';
 
 function WalletForm() {
   const dispatch: Dispatch = useDispatch();
-  const { currencies } = useSelector((state:StateType) => state.wallet);
+  const {
+    currencies,
+    editor, idToEdit } = useSelector((state:StateType) => state.wallet);
   const [dataForm, setDataForm] = React.useState({
     id: 0,
     value: '',
@@ -27,7 +29,11 @@ function WalletForm() {
 
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addDispesas(dataForm));
+    if (editor) {
+      dispatch(salvarDispesa({ ...dataForm, id: +idToEdit }));
+    } else {
+      dispatch(addDispesas(dataForm));
+    }
     setDataForm({
       ...dataForm,
       value: '',
@@ -110,7 +116,7 @@ function WalletForm() {
             );
           })}
         </select>
-        <button type="submit">Adicionar despesa</button>
+        <button type="submit">{editor ? 'Editar Despesa' : 'Adicionar despesa'}</button>
       </form>
     </div>
   );
