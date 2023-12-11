@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { StateType, StoreType } from '../types';
+import style from './Header.module.css';
 
 function Header() {
   const [ask, setAsk] = React.useState(0);
@@ -20,11 +21,15 @@ function Header() {
   }, [expenses]);
 
   return (
-    <div>
-      <p data-testid="email-field">{ email }</p>
-      <p data-testid="total-field">{ ask.toFixed(2) }</p>
-      <p data-testid="header-currency-field">BRL</p>
-    </div>
+    <header className={ style.header }>
+      <p className={ style.title }>My Wallet</p>
+      <div className={ style.dispesas }>
+        <p>Total Dispesas:</p>
+        <p data-testid="total-field" className={ style.field }>{ ask.toFixed(2) }</p>
+        <p data-testid="header-currency-field" className={ style.currency }>BRL</p>
+      </div>
+      <p data-testid="email-field" className={ style.email }>{ email }</p>
+    </header>
   );
 }
 

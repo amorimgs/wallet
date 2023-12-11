@@ -1,0 +1,57 @@
+.header {
+  align-items: center;
+  background-color: white;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  display: flex;
+  height: 156px;
+  justify-content: space-around;
+  width: 1037px;
+}
+
+.title {
+  color: #2fc18c;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 2rem;
+}
+
+.email {
+  align-items: center;
+  color: #2fc18c;
+  display: flex;
+  font-weight: 500;
+}
+
+.email:before {
+  background: url('../assets/emailEmote.svg');
+  content: '';
+  display: inline-block;
+  height: 25px;
+  margin-right: 5px;
+  width: 25px;
+}
+
+.dispesas {
+  align-items: center;
+  display: flex;
+}
+
+.dispesas p {
+  color: #003be5;
+  font-weight: 700;
+  margin: 3px;
+}
+
+.dispesas .field , .dispesas .currency {
+  font-weight: 400;
+}
+
+.dispesas:before {
+  background: url('../assets/Moedas.svg');
+  content: '';
+  display: inline-block;
+  height: 29px;
+  margin-right: 5px;
+  width: 29px;
+}
+

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { userAction } from '../redux/actions';
+import style from './Login.module.css';
 
 function Login() {
   const [formData, setFormData] = React.useState({
@@ -24,35 +25,45 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
-    <div>
+    <div className={ style.mainContainer }>
       <form
         onSubmit={ (e) => {
           e.preventDefault();
           dispatch(userAction(formData.email));
           navigate('/carteira');
         } }
+        className={ style.form }
       >
+        <p className={ style.title }>My Wallet</p>
         <input
+          className={ style.Input }
           type="text"
           id="email"
           data-testid="email-input"
-          placeholder="email"
+          placeholder="E-mail"
           value={ formData.email }
           onChange={ (event) => {
             handleChange(event);
           } }
         />
         <input
+          className={ style.Input }
           id="senha"
           type="password"
           data-testid="password-input"
-          placeholder="senha"
+          placeholder="Senha"
           value={ formData.senha }
           onChange={ (event) => {
             handleChange(event);
           } }
         />
-        <button disabled={ !validateInput() } type="submit">Entrar</button>
+        <button
+          className={ style.buttonSubmit }
+          disabled={ !validateInput() }
+          type="submit"
+        >
+          Entrar
+        </button>
       </form>
     </div>
   );

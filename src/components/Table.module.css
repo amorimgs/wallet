@@ -1,0 +1,62 @@
+.tableContainer {
+  background: #003be5;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+  display: flex;
+  justify-content: center;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-bottom: 50px;
+  position: absolute;
+  top: 156px;
+  width: 1155px;
+  z-index: 0;
+}
+
+.table {
+  margin-top: 265px;
+  width: 1040px;
+}
+
+.cabecalho {
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 13px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.cabecalho tr th {
+  border-right: 1px solid white;
+  padding: 0 10px;
+}
+
+.cabecalho tr th:last-child {
+  border: none;
+}
+
+.lineTable {
+  color: #2fc18c;
+  font-size: 12px;
+  font-style: normal;
+  text-align: center;
+}
+
+.lineTable td {
+  padding-top: 20px;
+}
+
+.btnEditar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.btnExcluir {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

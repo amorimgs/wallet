@@ -1,0 +1,87 @@
+.form {
+  background: rgba(225, 229, 235);
+  height: 229px;
+  padding: 25px 100px;
+  position: relative;
+  width: 1037px;
+}
+
+.label {
+  color: #003be5;
+  font-weight: 700;
+}
+
+.input {
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  color: #003be5;
+  height: 30px;
+  margin: 0 25px 25px 5px;
+  padding: 5px;
+}
+
+.labelDescription {
+  width: 460px;
+}
+
+.description {
+  width: 288.86px;
+}
+
+.labelTag {
+  width: 330px;
+}
+
+.tag {
+  width: 155px;
+}
+
+.labelValue {
+  width: 210px;
+}
+
+.value {
+  width: 158px;
+}
+
+.labelMethod {
+  width: 403px;
+}
+
+.method {
+  width: 228px;
+}
+
+.labelCurrency {
+  width: 155px;
+}
+
+.currency {
+  width: 91px;
+}
+
+.form div {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  height: 95px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  width: 1037px;
+}
+
+.submitButton {
+  background: #2fc18c;
+  border: 1px solid #2fc18c;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  height: 40px;
+  line-height: 14px;
+  text-align: center;
+  width: 330px;
+}

@@ -1,13 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ExpensesType, StateType } from '../types';
 import { editarDispesa, removeDispesa } from '../redux/actions';
+import style from './Table.module.css';
+import editar from '../assets/Editar.svg';
+import excluir from '../assets/excluir.svg';
 
 function Table() {
   const { expenses, editor } = useSelector((state:StateType) => state.wallet);
   const dispatch = useDispatch();
   const handleClick = (e:React.MouseEvent<HTMLButtonElement>) => {
     const newExpense = expenses.filter((el) => el.id !== +e.currentTarget.id);
-    switch (e.currentTarget.textContent) {
+    switch (e.currentTarget.children[0].getAttribute('alt')) {
       case 'Excluir':
         dispatch(removeDispesa(newExpense));
         break;
@@ -20,9 +23,9 @@ function Table() {
   };
 
   return (
-    <div>
-      <table>
-        <thead>
+    <div className={ style.tableContainer }>
+      <table className={ style.table }>
+        <thead className={ style.cabecalho }>
           <tr>
             <th>Descrição</th>
             <th>Tag</th>
@@ -39,7 +42,7 @@ function Table() {
           {
             expenses.length > 0 && expenses.map((el:ExpensesType) => {
               return (
-                <tr key={ el.id }>
+                <tr key={ el.id } className={ style.lineTable }>
                   <td>{ el.description }</td>
                   <td>{ el.tag }</td>
                   <td>{ el.method }</td>
@@ -50,20 +53,21 @@ function Table() {
                   <td>Real</td>
                   <td>
                     <button
+                      className={ style.btnEditar }
                       data-testid="edit-btn"
                       id={ (el.id).toString() }
                       onClick={ (e) => handleClick(e) }
                     >
-                      Editar
+                      <img src={ editar } alt="Editar" />
                     </button>
-                    /
                     <button
+                      className={ style.btnExcluir }
                       id={ (el.id).toString() }
                       onClick={ (e) => handleClick(e) }
                       data-testid="delete-btn"
                       disabled={ editor }
                     >
-                      Excluir
+                      <img src={ excluir } alt="Excluir" />
                     </button>
                   </td>
                 </tr>

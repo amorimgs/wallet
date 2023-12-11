@@ -1,0 +1,21 @@
+.containerMain {
+  align-items: center;
+  background-color: #2fc18c;
+  background-image: url('../assets/foto-fundo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+}
+
+.bgForm {
+  background: white;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+  height: 385px;
+  width: 1037px;
+  z-index: 1000;
+}
